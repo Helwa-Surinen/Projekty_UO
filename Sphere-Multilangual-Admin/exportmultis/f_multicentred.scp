@@ -10,7 +10,7 @@
 // Uses Target to determine coordinates. Creates a new TilesEntry.xml and  
 // TilesGroup.xml in the Sphere  root folder if it doesn't exist.
 // Reworked for a multilingual system
-// © 11/2024 by Golfin
+// © 11/2024  by Golfin
 //***********************************************************************************
 VERSION=X1
 
