@@ -1,8 +1,6 @@
 # Sphere Multilangual Admin
 Multilanguage Admin Console
 
-More in http://eranova.cz/sphere/multilanguage-admin and http://eranova.cz/sphere/multilanguage-admin-updates-and-extensions
-
 Changelog:
 
 2.10.2020 - first edition
@@ -14,7 +12,7 @@ Many thanks to Jhobean for the additions, corrections and ideas he made.
 
 20.12.2020 - included in scriptpack sphere X1
 
-6/30/2021 - Description of changes:
+30.6.2021 - Description of changes:
 - Fixed bugs in guild definitions and validation.
 - Added Spanish - Translated by GorGo
 - Added optional Admin Console extension with GM Function and Region Creator
@@ -24,3 +22,7 @@ Many thanks to Jhobean for the additions, corrections and ideas he made.
   The color of the text of the message sent to the world and the color of the preset texts can be changed in the defnames.scp file
 - Region Creator created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686.
   I modified it for the X1 version. 
+
+22.11.2024 - Description of changes:
+- Fixed sysmessage Region Creator
+- Added new functions f_multicentred and f_Statics2Multis
