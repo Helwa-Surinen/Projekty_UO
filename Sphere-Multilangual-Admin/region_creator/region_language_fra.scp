@@ -1,0 +1,32 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// © 11/2024 Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_FRA]
+d_Region_FRA_Region_Record				"Créateur de région"
+d_Region_FRA_Region_Record_Notice			"Créateur de région - Commenter"
+d_Region_FRA_Region_Record_Events			"Les Events et les Flags sont utilisés par défaut."
+d_Region_FRA_Region_Record_Flags			"Sélectionnez et supprimez ceux que vous ne voulez pas."
+d_Region_FRA_Region_Record_File1			"Dans le dossier maps, les données créées sont enregistrées"
+d_Region_FRA_Region_Record_File2			"dans le fichier map_region_record.scp. Copiez la région créée"
+d_Region_FRA_Region_Record_File3			"dans le fichier de carte approprié et enregistrez.Vous devez"
+d_Region_FRA_Region_Record_File4			"redémarrer le serveur sphere pour l'activer sur le shard!"
+d_Region_FRA_Top_Left					"Supérieur gauche:"
+d_Region_FRA_Bottom_Right				"Inférieur droit:"
+d_Region_FRA_Area_Name					"Area Name:"
+d_Region_FRA_Name					"Name:"
+d_Region_FRA_Area_Group					"Group:"
+d_Region_FRA_Area_P					"P:"
+d_Region_FRA_Create					"Créer une région"
+
+[Eof]

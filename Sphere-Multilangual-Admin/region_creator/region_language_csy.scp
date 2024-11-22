@@ -1,0 +1,32 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// © 11/2024 Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_CSY]
+d_Region_CSY_Region_Record				"Region kreator"
+d_Region_CSY_Region_Record_Notice			"Region kreator - Poznámky"
+d_Region_CSY_Region_Record_Events			"Eventy a Flagy jsou použity z výchozího nastavení."
+d_Region_CSY_Region_Record_Flags			"Zvolte a vymažte ty, které nechcete."
+d_Region_CSY_Region_Record_File1			"Ve složce maps se do souboru map_region_record.scp"
+d_Region_CSY_Region_Record_File2			"uloží vytvořená data. Vytvořený region zkopíruj do"
+d_Region_CSY_Region_Record_File3			"příslušného map souboru a ulož. Pro aktivaci na"
+d_Region_CSY_Region_Record_File4			"šardu je potřeba restartovat sphere server!"
+d_Region_CSY_Top_Left					"Horní levý roh:"
+d_Region_CSY_Bottom_Right				"Dolní pravý roh:"
+d_Region_CSY_Area_Name					"Area Name:"
+d_Region_CSY_Name					"Name:"
+d_Region_CSY_Area_Group					"Group:"
+d_Region_CSY_Area_P					"P:"
+d_Region_CSY_Create					"Vytvořit region"
+
+[Eof]

@@ -1,0 +1,32 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// © 11/2024 Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_SKY]
+d_Region_SKY_Region_Record				"Región Kreator"
+d_Region_SKY_Region_Record_Notice			"Región Kreator - Poznámky"
+d_Region_SKY_Region_Record_Events			"Eventy a Flagy sú použité z východiskového nastavenia."
+d_Region_SKY_Region_Record_Flags			"Zvoľte a vymažte tie, ktoré nechcete."
+d_Region_SKY_Region_Record_File1			"V složke maps sa do súboru map_region_record.scp"
+d_Region_SKY_Region_Record_File2			"uloží vytvorené dáta. Vytvorený región skopíruj do"
+d_Region_SKY_Region_Record_File3			"príslušného máp súboru a ulož. Pre aktiváciu na"
+d_Region_SKY_Region_Record_File4			"šarde je potreba reštartovať sphere server!"
+d_Region_SKY_Top_Left					"Horný ľavý roh:"
+d_Region_SKY_Bottom_Right				"Dolný pravý roh:"
+d_Region_SKY_Area_Name					"Area Name:"
+d_Region_SKY_Name					"Name:"
+d_Region_SKY_Area_Group					"Group:"
+d_Region_SKY_Area_P					"P:"
+d_Region_SKY_Create					"Vytvoriť región"
+
+[Eof]
