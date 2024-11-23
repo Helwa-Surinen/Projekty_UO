@@ -88,7 +88,7 @@ If (<Account.Plevel> > 4)
    DText 45 300 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_MultiCentrEd>
 Endif
 If (<Account.Plevel> > 4)
-   Button 10 320 4005 4006 1 0 21
+   Button 10 320 4005 4006 1 0 22
    DText 45 320 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Static2Multi>
 Endif
 
