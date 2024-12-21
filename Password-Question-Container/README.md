@@ -1,5 +1,5 @@
 # Sphere Password and Question Container
-/Multilanguage Password and Question Container
+Multilanguage Password and Question Container
 Original script by Wpn-z- (This script was created a long time ago, in 2002.)
 Contains two TYPES: t_Container_Password and t_Container_Question.
 As you need, you enter the TYPE on the container. When using the first one, 
