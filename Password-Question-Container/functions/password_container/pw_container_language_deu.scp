@@ -1,0 +1,26 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Multilanguage Password and Question Container
+// © 12/2024 German Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Container_Language_DEU]
+d_Container_DEU_Enter_Password				"Geben Sie das richtige Passwort ein"
+d_Container_DEU_Enter_Answer				"Beantworte die Frage richtig"
+d_Container_DEU_Question				"Frage:"
+d_Container_DEU_Answer					"Antwort:"
+d_Container_DEU_Confirm					"Bestätigen"
+d_Container_DEU_Cancel					"Abbrechen"
+d_Container_DEU_Change_Password				"Passwort ändern"
+d_Container_DEU_New_Pass				"Neues Passwort eingeben"
+d_Container_DEU_Change_Password_Button			"Verwenden Sie die Drücker Passwort ändern"
+d_Container_DEU_and_set_new				"und ein neues Passwort festlegen."
+d_Container_DEU_Change_Question_Answer			"Frage und Antwort ändern"
+d_Container_DEU_Change_Question_Answer_Button		"Verwenden Sie die Drücker Frage und Antwort ändern"
+d_Container_DEU_And_Answer_Set_New			"und setze diese neu."
+d_Container_DEU_Confirm_Change				"Änderungen bestätigen"

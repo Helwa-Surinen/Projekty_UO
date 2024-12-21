@@ -1,0 +1,28 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Multilanguage Password and Question Container
+// © 12/2024 Turkish Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Container_Language_TRK]
+d_Container_TRK_Enter_Password				"Kabı açmak için doğru şifreyi girin"
+d_Container_TRK_Enter_Answer				"Kabı açmak için soruyu doğru cevaplayın"
+d_Container_TRK_Question				"Soru:"
+d_Container_TRK_Answer					"Cevap:"
+d_Container_TRK_Confirm					"Onaylamak"
+d_Container_TRK_Cancel					"İptal etmek"
+d_Container_TRK_Change_Password				"Şifre değiştir"
+d_Container_TRK_New_Pass				"Yeni bir şifre girin"
+d_Container_TRK_Change_Password_Button			"Şifreyi değiştir düğmesini kullanın"
+d_Container_TRK_and_set_new				"ve yeni bir şifre belirleyin."
+d_Container_TRK_Change_Question_Answer			"Soruyu ve cevabı değiştir"
+d_Container_TRK_Change_Question_Answer_Button		"Soruyu ve yanıtı değiştir düğmesini kullanın"
+d_Container_TRK_And_Answer_Set_New			"ve bunları tekrar ayarlayın."
+d_Container_TRK_Confirm_Change				"Değişiklikleri onayla"
+
+[Eof]

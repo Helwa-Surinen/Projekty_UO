@@ -1,0 +1,28 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Multilanguage Password and Question Container
+// © 12/2024 Slovak Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Container_Language_SKY]
+d_Container_SKY_Enter_Password				"Pre otvorenie kontajnera zadaj správne heslo"
+d_Container_SKY_Enter_Answer				"Pre otvorenie kontajnera odpovedz správne na otázku"
+d_Container_SKY_Question				"Otázka:"
+d_Container_SKY_Answer					"Odpoveď:"
+d_Container_SKY_Confirm					"Potvrdiť"
+d_Container_SKY_Cancel					"Zrušiť"
+d_Container_SKY_Change_Password				"Zmeniť heslo"
+d_Container_SKY_New_Pass				"Zadaj nové heslo"
+d_Container_SKY_Change_Password_Button			"Použi tlačidlo Zmeniť heslo"
+d_Container_SKY_and_set_new				"a nastav nové heslo."
+d_Container_SKY_Change_Question_Answer			"Zmeniť otázku a odpoveď"
+d_Container_SKY_Change_Question_Answer_Button		"Použi tlačidlo Zmeniť otázku a odpoveď"
+d_Container_SKY_And_Answer_Set_New			"a nastav tieto novo."
+d_Container_SKY_Confirm_Change				"Potvrdiť zmeny"
+
+[Eof]

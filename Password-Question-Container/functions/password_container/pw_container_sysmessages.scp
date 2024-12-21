@@ -1,0 +1,85 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in ANSI encoding
+//***********************************************************************************
+// Multilanguage Password and Question Container
+// © 12/2024 Sysmessage Translated by Golfin
+//***********************************************************************************
+//For an obscure reason, these defs need to be separate on a separate ANSI encoded  file. Avoid this make bug on sysmessage with special letter like é à ç á
+VERSION=X1
+
+[DEFNAME defs_d_Container_Password_Sysmessage_CSY]
+d_Container_CSY_Distance				"Jsi moc daleko od kontejneru."
+d_Container_CSY_New_Owner				"Nyní vlastníš tento kontejner."
+d_Container_CSY_Pass_Correct				"Heslo bylo v poøádku zadáno."
+d_Container_CSY_Not_Correct				"Toto není správné heslo."
+d_Container_CSY_Pass_Save				"Heslo bylo uloženo jako"
+d_Container_CSY_Question_Save				"Znìní otázky uloženo jako:"
+d_Container_CSY_Answer_Save				"Znìní odpovìdi uloženo jako:"
+
+[DEFNAME defs_d_Container_Password_Sysmessage_DEU]
+d_Container_DEU_Distance				"Sie sind zu weit vom Container entfernt."
+d_Container_DEU_New_Owner				"Sie besitzen jetzt diesen Container."
+d_Container_DEU_Pass_Correct				"Das Passwort wurde korrekt eingegeben."
+d_Container_DEU_Not_Correct				"Dies ist nicht das richtige Passwort."
+d_Container_DEU_Pass_Save				"Passwort gespeichert unter"
+d_Container_DEU_Question_Save				"Fragetext gespeichert als:"
+d_Container_DEU_Answer_Save				"Antworttext gespeichert als:"
+
+[DEFNAME defs_d_Container_Password_Sysmessage_ENG]
+d_Container_ENG_Distance				"You are too far from the container."
+d_Container_ENG_New_Owner				"You are now the owner of this container."
+d_Container_ENG_Pass_Correct				"Password entered correctly."
+d_Container_ENG_Not_Correct				"This is not a correct password."
+d_Container_ENG_Pass_Save				"Password saved as"
+d_Container_ENG_Question_Save				"Question text saved as:"
+d_Container_ENG_Answer_Save				"Answer text saved as:"
+
+[DEFNAME defs_d_Container_Password_Sysmessage_ESP]
+d_Container_ESP_Distance				"Estás demasiado lejos del contenedor."
+d_Container_ESP_New_Owner				"Ahora eres dueno de este contenedor."
+d_Container_ESP_Pass_Correct				"La contrasena se ingresó correctamente."
+d_Container_ESP_Not_Correct				"Esta no es una contrasena correcta."
+d_Container_ESP_Pass_Save				"La contrasena se guardó como"
+d_Container_ESP_Question_Save				"Texto de la pregunta guardado como:"
+d_Container_ESP_Answer_Save				"Texto de respuesta guardado como:"
+
+[DEFNAME defs_d_Container_Password_Sysmessage_FRA]
+d_Container_FRA_Distance				"Vous etes trop loin du conteneur."
+d_Container_FRA_New_Owner				"Vous possédez désormais ce conteneur."
+d_Container_FRA_Pass_Correct				"Le mot de passe a été saisi correctement."
+d_Container_FRA_Not_Correct				"Ce mot de passe n'est pas correct."
+d_Container_FRA_Pass_Save				"Le mot de passe a été enregistré sous"
+d_Container_FRA_Question_Save				"Texte de la question enregistré sous:"
+d_Container_FRA_Answer_Save				"Texte de réponse enregistré sous:"
+
+[DEFNAME defs_d_Container_Password_Sysmessage_ITA]
+d_Container_ITA_Distance				"Sei troppo lontano dal contenitore."
+d_Container_ITA_New_Owner				"Ora possiedi questo contenitore."
+d_Container_ITA_Pass_Correct				"La password e stata inserita correttamente."
+d_Container_ITA_Not_Correct				"Questa non e la password corretta."
+d_Container_ITA_Pass_Save				"La password e stata salvata con nome"
+d_Container_ITA_Question_Save				"Testo della domanda salvato come:"
+d_Container_ITA_Answer_Save				"Testo della risposta salvato come:"
+
+[DEFNAME defs_d_Container_Password_Sysmessage_SKY]
+d_Container_SKY_Distance				"Si ve¾mi ïaleko od kontajnera."
+d_Container_SKY_New_Owner				"Teraz vlastníš tento kontajner."
+d_Container_SKY_Pass_Correct				"Heslo bolo v poriadku zadané."
+d_Container_SKY_Not_Correct				"Toto nie je správne heslo."
+d_Container_SKY_Pass_Save				"Heslo bolo uložené ako"
+d_Container_SKY_Question_Save				"Znenie otázky uložené ako:"
+d_Container_SKY_Answer_Save				"Znenie odpovede uložené ako:"
+
+[DEFNAME defs_d_Container_Password_Sysmessage_TRK]
+d_Container_TRK_Distance				"Konteynerden çok uzaktasiniz."
+d_Container_TRK_New_Owner				"Artik bu konteynerin sahibi sizsiniz."
+d_Container_TRK_Pass_Correct				"ªifre dogru girildi."
+d_Container_TRK_Not_Correct				"Bu dogru bir ºifre degil."
+d_Container_TRK_Pass_Save				"ªifre farkli kaydedildi"
+d_Container_TRK_Question_Save				"Soru metni ºu ºekilde kaydedildi:"
+d_Container_TRK_Answer_Save				"Cevap metni ºu ºekilde kaydedildi:"
+
+[EOF]

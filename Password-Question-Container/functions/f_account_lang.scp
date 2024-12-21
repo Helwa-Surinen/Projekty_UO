@@ -1,0 +1,34 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Multilanguage function
+// Created by Jhobean, © 12/2024 edited by Golfin
+//***********************************************************************************
+VERSION=X1
+
+//The script automatic find your langage and set the menu.
+//If you want to force a language, juste put Local.Lang=XXX 
+[FUNCTION f_Account_Lang]
+If (!strcmp(<Account.Lang>,CSY))									// Czech
+   Local.Lang=<Account.Lang>
+Elif (!strcmp(<Account.Lang>,DEU))									// German
+   Local.Lang=<Account.Lang>
+Elif (!strcmp(<Account.Lang>,ENG)) || (!strcmp(<Account.Lang>,ENU))					// English
+   Local.Lang=ENG   
+Elif (!strcmp(<Account.Lang>,FRA)) || (!strcmp(<Account.Lang>,FRB)) || (!strcmp(<Account.Lang>,FRC))	// French
+   Local.Lang=FRA  
+Elif (!strcmp(<Account.Lang>,ITA))									// Italian
+   Local.Lang=<Account.Lang> 
+Elif (!strcmp(<Account.Lang>,SKY))									// Slovak
+   Local.Lang=<Account.Lang> 
+Elif (!strcmp(<Account.Lang>,TRK))									// Turkish
+   Local.Lang=<Account.Lang> 
+Elif (!strcmp(<Account.Lang>,ESP))									// Spanish
+   Local.Lang=<Account.Lang>
+Else //All other langage
+   Local.Lang=ENG 
+Endif
+CTag.AccountLang=<Local.Lang>
+
+[Eof]

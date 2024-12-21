@@ -1,0 +1,250 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in ANSI encoding
+//***********************************************************************************
+// Multilanguage Password and Question Container
+// Original script by Wpn-z- (This script was created a long time ago, in 2002.)
+// Contains two TYPES: t_Container_Password and t_Container_Question.
+// As you need, you enter the TYPE on the container. When using the first one, 
+// you only enter the password to open it. With the second one, the container owner 
+// can set a question and its answer.
+// From Plevel GM can see and operate the container
+//***********************************************************************************
+// © 12/2024 Update for sphere X and Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+// Password Container
+
+[TYPEDEF t_Container_Password]
+On=@Dclick
+   Src.f_Account_Lang
+   IF (<Distance> > 2)
+      Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Distance>		// Text: You are too far away.
+   Else
+      If (<Restest 1 i_Container_Password_Info>)
+         If (<Findid.i_Container_Password_Info.Link>==<Src.UID>) || (<Src.Account.Plevel> > 3)
+            Findid.i_Container_Password_Info.Tag.Ownercheck=1
+         Else
+            Findid.i_Container_Password_Info.Tag.Ownercheck=0
+         Endif
+         Dialog d_Container_Password
+      Else
+         Src.Newitem=i_Container_Password_Info
+         Src.Act.Cont=<UID>
+         Src.Act.Link=<Src.UID>
+         Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_New_Owner>
+      Endif
+      Return 1
+   Endif
+
+//   On=@ClientToolTip
+   //   addcliloc 1072225, <fval <Weight>>	// Váha: ~1_WEIGHT~ kamení
+   //   addcliloc <QVAL (<WEIGHT> == 10) ? 1072788 : 1072225>,<FVAL <WEIGHT>> // Weight: ~1_WEIGHT~ stone / Weight: ~1_WEIGHT~ stones
+   //   addcliloc 1073841, <count><maxcount><fval <Weight>>	// Contents: ~1_COUNT~/~2_MAXCOUNT~ items, ~3_WEIGHT~ stones
+
+[ITEMDEF i_Container_Password_Info]
+ID=i_floor_marble	// 0x0495
+NAME=Info of Container (DO NOT REMOVE)
+WEIGHT=0
+TYPE=t_script
+
+On=@Create
+   Attr=attr_invis|attr_move_never
+   Tag.Password=
+
+[Dialog d_Container_Password]
+100, 80
+page 0
+resizepic 0 10 5054 357 180								// Background
+Gumppictiled 5 17 345 168 2624
+Checkertrans 5 17 345 168
+Dtext 20 25 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Enter_Password>		// Text: Enter the password correctly to open the Container
+If !(<isempty <Findid.i_Container_Password_Info.Tag.Password>>)
+   gumppictiled 20 57 313 20 87
+   Checkertrans 22 59 313 16
+   If (<Findid.i_Container_Password_Info.Tag.Ownercheck> = 1) || (<Src.Account.Plevel> > 3)
+      DTextenTrylimited 22 57 311 20 0480 0 38 <Findid.i_Container_Password_Info.Tag.Password> // Text Box: The Password (If owner or gm)
+   Else
+      DTextenTrylimited 22 57 311 20 0480 0 38 
+   Endif
+   Button 20 95 4023 4025 1 0 1								// Button: Confirm
+   Dtext 55 97 043 <Def.d_Container_<Src.CTag0.AccountLang>_Confirm>			// Text: Confirm
+   Button 260 95 4017 4019 1 0 0							// Button: Cancel
+   Dtext 295 97 089 <Def.d_Container_<Src.CTag0.AccountLang>_Cancel>			// Text: Cancel
+   If (<Findid.i_Container_Password_Info.Tag.Ownercheck> = 1) || (<Src.Account.Plevel> > 3)
+      Button 20 145 4005 4007 1 0 2							// Button: Change Password
+      Dtext 55 147 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Change_Password>	// Text: Change Password
+   Endif
+Else
+   Dtext 20 60 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Change_Password_Button>	// Text: Use the "Change Password" button 
+   Dtext 20 90 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_and_set_new>		// Text: and set a new password.
+   Button 260 95 4017 4019 1 0 0							// Button: Cancel
+   Dtext 295 97 089 <Def.d_Container_<Src.CTag0.AccountLang>_Cancel>			// Text: Cancel
+   If (<Findid.i_Container_Password_Info.Tag.Ownercheck> = 1) || (<Src.Account.Plevel> > 3)
+      Button 20 145 4005 4007 1 0 2							// Button: Change Password
+      Dtext 55 147 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Change_Password>	// Text: Change Password
+   Endif
+Endif
+
+[Dialog d_Container_Password Button]
+On=1
+   Findid.i_Container_Password_Info.Tag.PasswordAccept=<argtxt[0]>
+   If (STRMATCH(<Findid.i_Container_Password_Info.Tag.PasswordAccept>,<Findid.i_Container_Password_Info.Tag.Password>))
+      TYPE=t_Container
+      USE
+      TYPE=t_Container_Password
+      Src.Sysmessage @tcolor_green <Def.d_Container_<Src.CTag0.AccountLang>_Pass_Correct>	// Text: You have entered the password correctly.
+   Else
+      Src.Sysmessage @tcolor_red '<Findid.i_Container_Password_Info.Tag.PasswordAccept>' <Def.d_Container_<Src.CTag0.AccountLang>_Not_Correct>	// Text: is not the correct password for this Container.
+   Endif
+   Findid.i_Container_Password_Info.Tag.PasswordAccept=
+
+On=2
+   Dialog d_Container_Password_Edit
+
+[Dialog d_Container_Password_Edit]
+100, 80
+page 0
+resizepic 0 10 5054 357 180									// Background
+Gumppictiled 5 17 345 168 2624
+Checkertrans 5 17 345 168
+Dtext 20 25 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_New_Pass>				// Text: Enter a new password
+gumppictiled 20 57 313 20 87
+Checkertrans 22 59 313 16
+DTextenTrylimited 22 57 311 20 0480 0 38 <Findid.i_Container_Password_Info.Tag.Password>	// Text: Tag.Password
+Button 20 95 4023 4025 1 0 1									// Button: Confirm
+Dtext 55 97 043 <Def.d_Container_<Src.CTag0.AccountLang>_Confirm_Change>			// Text: Confirm change
+Button 260 95 4017 4019 1 0 0									// Button: Cancel
+Dtext 295 97 089 <Def.d_Container_<Src.CTag0.AccountLang>_Cancel>				// Text: Cancel
+
+[Dialog d_Container_Password_Edit Button]
+On=0
+   Dialog d_Container_Password
+
+On=1
+   Findid.i_Container_Password_Info.Tag.Password=<argtxt[0]>
+   Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Pass_Save> '<Findid.i_Container_Password_Info.Tag.Password>'		// Text: Password saved as 'Tag.Password'
+   Dialog d_Container_Password
+
+// Question and answer container
+
+[TYPEDEF t_Container_Question]
+On=@Dclick
+   Src.f_Account_Lang
+   IF (<Distance> > 2)
+      Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Distance>		// Text: You are too far away.
+   Else
+      If (<Restest 1 i_Container_Question_Info>)
+         If (<Findid.i_Container_Question_Info.Link>==<Src.UID>) || (<Src.Account.Plevel> > 3)
+            Findid.i_Container_Question_Info.Tag.Ownercheck=1
+         Else
+            Findid.i_Container_Question_Info.Tag.Ownercheck=0
+         Endif
+            Dialog d_Container_Question
+      Else
+         Src.Newitem=i_Container_Question_Info
+         Src.Act.Cont=<UID>
+         Src.Act.Link=<Src.UID>
+         Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_New_Owner>
+      Endif
+      Return 1
+   Endif
+
+[ITEMDEF i_Container_Question_Info]
+ID=i_floor_marble	// 0x0495
+NAME=Info of Container (DO NOT REMOVE)
+WEIGHT=0
+TYPE=t_script
+
+On=@Create
+   Attr=attr_invis|attr_move_never
+   Tag.Question=
+   Tag.Answer=
+
+[Dialog d_Container_Question]
+100, 80
+page 0
+resizepic 0 10 5054 357 180									// Background
+Gumppictiled 5 17 345 168 2624
+Checkertrans 5 17 345 168
+Dtext 20 25 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Enter_Answer>				// Text: Enter the Answer correctly to open the Container
+If !(<isempty <Findid.i_Container_Question_Info.Tag.Answer>>)
+   Dtext 20 50 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Question>
+   Dtext 75 50 0c1 <Findid.i_Container_Question_Info.Tag.Question>
+   gumppictiled 75 70 258 20 87
+   Checkertrans 77 72 258 16
+   If (<Findid.i_Container_Question_Info.Tag.Ownercheck> = 1) || (<Src.Account.Plevel> > 3)
+      Dtext 20 70 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Answer>
+      DTextenTrylimited 77 70 256 20 0480 0 32 <Findid.i_Container_Question_Info.Tag.Answer>	// Text Box: The Answer (If owner or gm)
+   Else
+      DTextenTrylimited 77 70 256 20 0480 0 32 
+   Endif
+   Button 20 110 4023 4025 1 0 1								// Button: Confirm
+   Dtext 55 112 043 <Def.d_Container_<Src.CTag0.AccountLang>_Confirm>				// Text: Confirm
+   Button 260 110 4017 4019 1 0 0								// Button: Cancel
+   Dtext 295 112 089 <Def.d_Container_<Src.CTag0.AccountLang>_Cancel>				// Text: Cancel
+   If (<Findid.i_Container_Question_Info.Tag.Ownercheck> = 1) || (<Src.Account.Plevel> > 3)
+      Button 20 145 4005 4007 1 0 2								// Button: Change Password
+      Dtext 55 147 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Change_Question_Answer>		// Text: Change Password
+   Endif
+Else
+   Dtext 20 60 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Change_Question_Answer_Button>	// Text: Use the "Change Password" button 
+   Dtext 20 90 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_And_Answer_Set_New>			// Text: and set a new password.
+   Button 260 95 4017 4019 1 0 0								// Button: Cancel
+   Dtext 295 97 089 <Def.d_Container_<Src.CTag0.AccountLang>_Cancel>				// Text: Cancel
+   If (<Findid.i_Container_Question_Info.Tag.Ownercheck> = 1) || (<Src.Account.Plevel> > 3)
+      Button 20 145 4005 4007 1 0 2								// Button: Change Password
+      Dtext 55 147 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Change_Question_Answer>		// Text: Change Password
+   Endif
+Endif
+
+[Dialog d_Container_Question Button]
+On=1
+   Findid.i_Container_Question_Info.Tag.AnswerAccept=<argtxt[0]>
+   If (STRMATCH(<Findid.i_Container_Question_Info.Tag.AnswerAccept>,<Findid.i_Container_Question_Info.Tag.Answer>))
+      TYPE=t_Container
+      USE
+      TYPE=t_Container_Question
+      Src.Sysmessage @tcolor_green <Def.d_Container_<Src.CTag0.AccountLang>_Pass_Correct>
+   Else
+      Src.Sysmessage @tcolor_red '<Findid.i_Container_Question_Info.Tag.AnswerAccept>' <Def.d_Container_<Src.CTag0.AccountLang>_Not_Correct>
+   Endif
+   Findid.i_Container_Question_Info.Tag.AnswerAccept=
+
+On=2
+   Dialog d_Container_Question_Edit
+
+[Dialog d_Container_Question_Edit]
+100, 80
+page 0
+resizepic 0 10 5054 357 180									// Background
+Gumppictiled 5 17 345 168 2624
+Checkertrans 5 17 345 168
+Dtext 20 30 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Question>				// Text: Question
+gumppictiled 75 30 258 20 87
+Checkertrans 77 32 258 16
+DTextenTrylimited 77 32 256 20 0480 1 32 <Findid.i_Container_Question_Info.Tag.Question>	// Text: Tag.Question
+Dtext 20 60 0c1 <Def.d_Container_<Src.CTag0.AccountLang>_Answer>				// Text: Answer
+gumppictiled 75 60 258 20 87
+Checkertrans 77 62 258 16
+DTextenTrylimited 77 62 256 20 0480 2 32 <Findid.i_Container_Question_Info.Tag.Answer>		// Text: Tag.Answer
+Button 20 95 4023 4025 1 0 1									// Button: Confirm
+Dtext 55 97 043 <Def.d_Container_<Src.CTag0.AccountLang>_Confirm_Change>			// Text: Confirm change
+Button 260 95 4017 4019 1 0 0									// Button: Cancel
+Dtext 295 97 089 <Def.d_Container_<Src.CTag0.AccountLang>_Cancel>				// Text: Cancel
+
+[Dialog d_Container_Question_Edit Button]
+On=0
+   Dialog d_Container_Question
+
+On=1
+   Findid.i_Container_Question_Info.Tag.Question=<argtxt[1]>
+   Findid.i_Container_Question_Info.Tag.Answer=<argtxt[2]>
+   Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Question_Save> '<Findid.i_Container_Question_Info.Tag.Question>'
+   Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Answer_Save> '<Findid.i_Container_Question_Info.Tag.Answer>'
+   Dialog d_Container_Question
+
+[EOF]

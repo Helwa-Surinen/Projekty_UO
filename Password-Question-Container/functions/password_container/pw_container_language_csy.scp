@@ -1,0 +1,28 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Multilanguage Password and Question Container
+// © 12/2024 Czech Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Container_Language_CSY]
+d_Container_CSY_Enter_Password				"Pro otevření kontejneru zadej správné heslo"
+d_Container_CSY_Enter_Answer				"Pro otevření kontejneru odpověz správně na otázku"
+d_Container_CSY_Question				"Otázka:"
+d_Container_CSY_Answer					"Odpověď:"
+d_Container_CSY_Confirm					"Potvrdit"
+d_Container_CSY_Cancel					"Zrušit"
+d_Container_CSY_Change_Password				"Změnit heslo"
+d_Container_CSY_New_Pass				"Zadej nové heslo"
+d_Container_CSY_Change_Password_Button			"Použij tlačítko Změnit heslo"
+d_Container_CSY_and_set_new				"a nastav nové heslo."
+d_Container_CSY_Change_Question_Answer			"Změnit otázku a odpověď"
+d_Container_CSY_Change_Question_Answer_Button		"Použij tlačítko Změnit otázku a odpověď"
+d_Container_CSY_And_Answer_Set_New			"a nastav tyto nově."
+d_Container_CSY_Confirm_Change				"Potvrdit změny"
+
+[Eof]
