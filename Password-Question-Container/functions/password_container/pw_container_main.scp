@@ -40,11 +40,6 @@ On=@Dclick
       Return 1
    Endif
 
-//   On=@ClientToolTip
-   //   addcliloc 1072225, <fval <Weight>>	// Váha: ~1_WEIGHT~ kamení
-   //   addcliloc <QVAL (<WEIGHT> == 10) ? 1072788 : 1072225>,<FVAL <WEIGHT>> // Weight: ~1_WEIGHT~ stone / Weight: ~1_WEIGHT~ stones
-   //   addcliloc 1073841, <count><maxcount><fval <Weight>>	// Contents: ~1_COUNT~/~2_MAXCOUNT~ items, ~3_WEIGHT~ stones
-
 [ITEMDEF i_Container_Password_Info]
 ID=i_floor_marble	// 0x0495
 NAME=Info of Container (DO NOT REMOVE)
