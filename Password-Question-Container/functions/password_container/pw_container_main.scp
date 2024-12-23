@@ -36,6 +36,7 @@ On=@Dclick
          Src.Act.Cont=<UID>
          Src.Act.Link=<Src.UID>
          Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_New_Owner>
+	 Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Initiated_Ownership> <UID>.
       Endif
       Return 1
    Endif
@@ -92,8 +93,10 @@ On=1
       USE
       TYPE=t_Container_Password
       Src.Sysmessage @tcolor_green <Def.d_Container_<Src.CTag0.AccountLang>_Pass_Correct>	// Text: You have entered the password correctly.
+      Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Correct_Password> <UID>.
    Else
       Src.Sysmessage @tcolor_red '<Findid.i_Container_Password_Info.Tag.PasswordAccept>' <Def.d_Container_<Src.CTag0.AccountLang>_Not_Correct>	// Text: is not the correct password for this Container.
+      Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Wrong_Password> <UID>.
    Endif
    Findid.i_Container_Password_Info.Tag.PasswordAccept=
 
@@ -122,6 +125,7 @@ On=0
 On=1
    Findid.i_Container_Password_Info.Tag.Password=<argtxt[0]>
    Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Pass_Save> '<Findid.i_Container_Password_Info.Tag.Password>'		// Text: Password saved as 'Tag.Password'
+   Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Change_Pass> <UID>:  '<Findid.i_Container_Password_Info.Tag.Password>'
    Dialog d_Container_Password
 
 // Question and answer container
@@ -144,6 +148,7 @@ On=@Dclick
          Src.Act.Cont=<UID>
          Src.Act.Link=<Src.UID>
          Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_New_Owner>
+	 Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Initiated_Ownership> <UID>.
       Endif
       Return 1
    Endif
@@ -204,8 +209,10 @@ On=1
       USE
       TYPE=t_Container_Question
       Src.Sysmessage @tcolor_green <Def.d_Container_<Src.CTag0.AccountLang>_Pass_Correct>
+      Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Correct_Answer> <UID>.
    Else
       Src.Sysmessage @tcolor_red '<Findid.i_Container_Question_Info.Tag.AnswerAccept>' <Def.d_Container_<Src.CTag0.AccountLang>_Not_Correct>
+      Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Wrong_Answer> <UID>.
    Endif
    Findid.i_Container_Question_Info.Tag.AnswerAccept=
 
@@ -240,6 +247,8 @@ On=1
    Findid.i_Container_Question_Info.Tag.Answer=<argtxt[2]>
    Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Question_Save> '<Findid.i_Container_Question_Info.Tag.Question>'
    Src.Sysmessage @tcolor_orange <Def.d_Container_<Src.CTag0.AccountLang>_Answer_Save> '<Findid.i_Container_Question_Info.Tag.Answer>'
+   Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Change_Question> <UID>:  '<Findid.i_Container_Question_Info.Tag.Question>'
+   Serv.Log <Src.UID> <Src.NAME> <Def.d_Container_<Src.CTag0.AccountLang>_Change_Answer> <UID>:  '<Findid.i_Container_Question_Info.Tag.Answer>'
    Dialog d_Container_Question
 
 [EOF]
